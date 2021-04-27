@@ -1,8 +1,8 @@
 extern crate rand;
 
-use std::io;
-use std::cmp::Ordering;
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
   println!("Guess the game!");
@@ -14,7 +14,8 @@ fn main() {
 
     let mut guess = String::new();
 
-    io::stdin().read_line(&mut guess)
+    io::stdin()
+      .read_line(&mut guess)
       .expect("Failed to read the line!");
 
     let guess: u32 = match guess.trim().parse() {
@@ -27,14 +28,14 @@ fn main() {
     match guess.cmp(&secret_number) {
       Ordering::Less => {
         println!("Too small!\n");
-      },
+      }
       Ordering::Greater => {
         println!("Too big!\n")
-      },
+      }
       Ordering::Equal => {
         println!("You win!\n");
         break;
-      },
+      }
     }
   }
 }
