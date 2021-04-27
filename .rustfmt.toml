@@ -3,5 +3,5 @@ edition = "2018"
 fn_args_layout = "Compressed"
 newline_style = "Unix"
 reorder_imports = true
-reoder_modules = true
+reorder_modules = true
 use_field_init_shorthand = true
